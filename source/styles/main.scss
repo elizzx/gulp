@@ -1,3 +1,29 @@
-p {
-    color: #ff0000;
+@import "colors";
+@import "mixins";
+
+$margin-top: 20;
+
+.section {
+    &__block {
+        background: green;
+
+        &:hover {
+            background: blue;
+        }
+    }
+    &__text {
+        color: $primary-color;
+        margin-top: #{$margin-top}px;
+    }
+
+    &__button {
+        @include button(blue, 5px);
+    }
+}
+
+.footer {
+    &__button {
+        @include button(green, 30px);
+        margin-top: #{$margin-top}px;
+    }
 }
